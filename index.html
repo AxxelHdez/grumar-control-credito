@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GRUMAR | Control de Crédito</title>
+<style>
+:root{--navy:#142b4a;--blue:#245b91;--orange:#f28c28;--ink:#182433;--muted:#6b7788;--line:#e4e9f0;--bg:#f4f7fb;--white:#fff;--green:#16845b;--red:#c74444;--shadow:0 8px 24px rgba(20,43,74,.06)}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;color:var(--ink)}button,input,select,textarea{font:inherit}button{cursor:pointer}.app{display:grid;grid-template-columns:248px 1fr;min-height:100vh}.sidebar{background:var(--navy);color:#fff;padding:26px 16px;display:flex;flex-direction:column;gap:26px}.brand{display:flex;align-items:center;gap:11px;padding:0 10px}.brand-mark{width:40px;height:40px;border-radius:12px;background:var(--orange);display:grid;place-items:center;font-weight:900;color:#fff;letter-spacing:-1px}.brand strong{font-size:18px;letter-spacing:1.3px}.brand small{display:block;color:#aebed1;font-size:11px;margin-top:3px;letter-spacing:1.5px}.nav-label{font-size:10px;color:#91a7c0;text-transform:uppercase;letter-spacing:1.5px;padding:0 12px;margin-bottom:8px}.nav{display:grid;gap:5px}.nav button{border:0;background:transparent;color:#cbd7e5;text-align:left;padding:12px;border-radius:10px;display:flex;gap:12px;align-items:center;font-size:13px}.nav button .ico{width:20px;text-align:center;font-size:16px}.nav button:hover,.nav button.active{background:rgba(255,255,255,.12);color:white}.side-note{margin-top:auto;border:1px solid rgba(255,255,255,.16);border-radius:12px;padding:14px;font-size:12px;color:#c2d0df;line-height:1.5}.side-note strong{display:block;color:#fff;margin-bottom:5px}.main{min-width:0}.topbar{height:76px;background:#fff;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 34px;gap:20px}.crumb{font-size:12px;color:var(--muted)}.topbar h1{font-size:20px;margin:4px 0 0;color:var(--navy)}.user{display:flex;align-items:center;gap:10px;font-size:12px;color:var(--muted)}.avatar{height:36px;width:36px;background:#e8eef6;color:var(--navy);border-radius:50%;display:grid;place-items:center;font-weight:800}.content{padding:28px 34px 42px;max-width:1600px;margin:auto}.page-head{display:flex;justify-content:space-between;align-items:flex-start;gap:20px;margin-bottom:22px}.page-head h2{margin:0;font-size:23px;color:var(--navy);letter-spacing:-.4px}.page-head p{margin:7px 0 0;color:var(--muted);font-size:13px}.actions{display:flex;gap:9px;flex-wrap:wrap}.btn{border:1px solid var(--line);background:#fff;color:var(--navy);padding:10px 14px;border-radius:9px;font-weight:650;font-size:12px;display:inline-flex;align-items:center;gap:7px}.btn.primary{background:var(--blue);color:#fff;border-color:var(--blue)}.btn.orange{background:var(--orange);color:#fff;border-color:var(--orange)}.btn.danger{color:var(--red)}.btn:hover{filter:brightness(.97)}.grid{display:grid;gap:16px}.kpis{grid-template-columns:repeat(4,minmax(0,1fr));margin-bottom:18px}.card{background:#fff;border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow);min-width:0}.kpi{padding:20px}.kpi-top{display:flex;align-items:center;justify-content:space-between;color:var(--muted);font-size:12px}.kpi-icon{height:34px;width:34px;border-radius:10px;background:#edf3fa;display:grid;place-items:center;color:var(--blue);font-size:17px}.kpi-value{font-size:27px;font-weight:800;color:var(--navy);margin:15px 0 5px;letter-spacing:-.8px}.kpi-foot{font-size:11px;color:var(--muted)}.dashboard-grid{grid-template-columns:1.15fr .85fr;margin-bottom:18px}.card-head{padding:18px 20px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:12px}.card-head h3{margin:0;font-size:14px;color:var(--navy)}.card-head p{margin:5px 0 0;color:var(--muted);font-size:11px}.card-body{padding:20px}.line-row{margin-bottom:21px}.line-row:last-child{margin-bottom:0}.line-meta{display:flex;justify-content:space-between;gap:12px;font-size:12px;margin-bottom:9px}.line-meta strong{color:var(--navy)}.line-meta span{color:var(--muted)}.bar{height:9px;border-radius:20px;background:#edf0f5;overflow:hidden}.bar span{display:block;height:100%;border-radius:20px;background:var(--blue);width:0;transition:width .2s}.bar.orange span{background:var(--orange)}.bar.green span{background:#27a477}.split-bars{display:grid;gap:19px}.zone-item{border:1px solid var(--line);border-radius:12px;padding:14px}.zone-title{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;font-weight:750;font-size:13px}.zone-title small{color:var(--muted);font-weight:500}.zone-mini{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.mini{background:#f7f9fc;border-radius:8px;padding:9px}.mini label{display:block;font-size:10px;color:var(--muted);margin-bottom:5px}.mini strong{font-size:12px;color:var(--navy)}.table-card{overflow:hidden}.table-wrap{overflow:auto}table{width:100%;border-collapse:collapse;white-space:nowrap}th{text-align:left;font-size:10px;text-transform:uppercase;letter-spacing:.7px;color:#778396;background:#fafbfd;padding:13px 17px;border-bottom:1px solid var(--line)}td{font-size:12px;padding:14px 17px;border-bottom:1px solid #edf0f5}tbody tr:last-child td{border-bottom:0}tbody tr:hover{background:#fafcff}.empty{text-align:center;color:var(--muted);padding:35px 16px}.pill{display:inline-flex;padding:5px 8px;border-radius:20px;font-size:10px;font-weight:750;background:#edf3fa;color:var(--blue)}.pill.cash{background:#e6f6ef;color:var(--green)}.pill.pending{background:#fff3dc;color:#9a6810}.pill.cancel{background:#fdeaea;color:var(--red)}.positive{color:var(--green);font-weight:700}.negative{color:var(--red);font-weight:700}.filters{display:flex;gap:9px;flex-wrap:wrap}.filters input,.filters select{min-width:150px}.field{display:grid;gap:6px}.field label{font-size:11px;color:#566477;font-weight:700}.field input,.field select,.field textarea,.filters input,.filters select{width:100%;border:1px solid #dce3ec;border-radius:8px;background:#fff;padding:11px 12px;color:var(--ink);outline:none;font-size:12px}.field input:focus,.field select:focus,.field textarea:focus{border-color:#78a6d4;box-shadow:0 0 0 3px rgba(36,91,145,.1)}.form-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}.form-grid .full{grid-column:1/-1}.form-card{padding:22px}.form-card h3{margin:0 0 5px;color:var(--navy);font-size:15px}.form-card>p{margin:0 0 20px;font-size:12px;color:var(--muted)}.form-actions{display:flex;justify-content:flex-end;gap:9px;margin-top:20px}.notice{padding:12px 14px;border-radius:9px;background:#fff7e8;color:#805d1c;font-size:11px;line-height:1.5;border:1px solid #f6e6c6}.notice.blue{background:#edf5ff;border-color:#d7e7fb;color:#315b87}.section-title{font-size:14px;color:var(--navy);margin:22px 0 12px}.hidden{display:none!important}.modal-backdrop{position:fixed;inset:0;background:rgba(11,24,41,.45);display:grid;place-items:center;padding:20px;z-index:10}.modal{background:#fff;border-radius:15px;width:min(650px,100%);max-height:90vh;overflow:auto;box-shadow:0 24px 70px #09172a55}.modal-head{padding:20px 22px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center}.modal-head h3{margin:0;color:var(--navy);font-size:16px}.modal-body{padding:22px}.xbtn{border:0;background:#f2f5f8;border-radius:8px;width:32px;height:32px;font-size:18px;color:var(--muted)}.toast{position:fixed;bottom:22px;right:22px;background:var(--navy);color:white;padding:13px 17px;border-radius:10px;box-shadow:var(--shadow);font-size:12px;z-index:20;max-width:360px}.small{font-size:11px;color:var(--muted)}.right{text-align:right}.settings-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.limit-card{padding:18px}.limit-card h4{margin:0 0 15px;color:var(--navy)}.limit-card .field{margin-bottom:12px}.footer-note{margin-top:18px;color:var(--muted);font-size:10px;line-height:1.5}
+@media(max-width:1100px){.app{grid-template-columns:210px 1fr}.content{padding:22px}.topbar{padding:0 22px}.kpis{grid-template-columns:repeat(2,minmax(0,1fr))}.dashboard-grid{grid-template-columns:1fr}.settings-grid{grid-template-columns:1fr}}
+@media(max-width:720px){.app{display:block}.sidebar{padding:12px;gap:12px}.brand{padding:4px 6px}.brand-mark{width:34px;height:34px}.nav-label,.side-note{display:none}.nav{display:flex;overflow:auto}.nav button{white-space:nowrap;padding:10px}.topbar{height:auto;padding:15px 18px}.topbar h1{font-size:17px}.user .user-text{display:none}.content{padding:18px 13px 30px}.page-head{display:block}.actions{margin-top:15px}.kpis{gap:10px}.kpi{padding:14px}.kpi-value{font-size:21px}.kpi-top{font-size:10px}.kpi-icon{width:29px;height:29px}.form-grid{grid-template-columns:1fr}.form-grid .full{grid-column:auto}.zone-mini{grid-template-columns:1fr}.mini{display:flex;justify-content:space-between;align-items:center}.mini label{margin:0}.card-body{padding:15px}.card-head{padding:15px}.filters>*{flex:1;min-width:130px!important}}
+</style>
+</head>
+<body>
+<div class="app">
+  <aside class="sidebar">
+    <div class="brand"><div class="brand-mark">G</div><div><strong>GRUMAR</strong><small>CONTROL DE CRÉDITO</small></div></div>
+    <div><div class="nav-label">Administración</div><nav class="nav" id="nav">
+      <button class="active" data-page="dashboard"><span class="ico">▦</span> Dashboard</button>
+      <button data-page="units"><span class="ico">🚘</span> Unidades y facturas</button>
+      <button data-page="payments"><span class="ico">↗</span> Pagos</button>
+      <button data-page="movements"><span class="ico">≋</span> Movimientos</button>
+      <button data-page="settings"><span class="ico">⚙</span> Configuración</button>
+    </nav></div>
+  </aside>
+  <main class="main">
+    <header class="topbar"><div><div class="crumb">GRUMAR.MX / Finanzas Plan Piso</div><h1 id="topTitle">Vista General</h1></div></header>
+    <div class="content">
+      <section id="page-dashboard" class="page">
+        <div class="page-head"><div><h2>Resumen de crédito</h2><p>Visión consolidada de las líneas de crédito y su utilización.</p></div><div class="actions"><button class="btn" onclick="exportCSV('movements')">⇩ Exportar movimientos</button><button class="btn primary" onclick="openUnitForm()">＋ Registrar unidad</button></div></div>
+        <div class="grid kpis">
+          <div class="card kpi"><div class="kpi-top">Límite total de crédito <span class="kpi-icon">◈</span></div><div class="kpi-value" id="kpiLimit">$174.0 M</div><div class="kpi-foot">Líneas autorizadas configuradas</div></div>
+          <div class="card kpi"><div class="kpi-top">Crédito utilizado <span class="kpi-icon">↗</span></div><div class="kpi-value" id="kpiUsed">$0</div><div class="kpi-foot" id="kpiUsedFoot">Cargos netos confirmados</div></div>
+          <div class="card kpi"><div class="kpi-top">Crédito disponible <span class="kpi-icon">✓</span></div><div class="kpi-value" id="kpiAvailable">$174.0 M</div><div class="kpi-foot" id="kpiAvailableFoot">Disponible consolidado</div></div>
+          <div class="card kpi"><div class="kpi-top">Unidades financiadas <span class="kpi-icon">▤</span></div><div class="kpi-value" id="kpiUnits">0</div><div class="kpi-foot" id="kpiCash">0 unidades de contado</div></div>
+        </div>
+        <div class="grid dashboard-grid">
+          <div class="card"><div class="card-head"><div><h3>Disponibilidad por línea</h3><p>Disponible vs. límite asignado a nivel GRUMAR</p></div></div><div class="card-body" id="lineBars"></div></div>
+          <div class="card"><div class="card-head"><div><h3>Distribución por zona</h3><p>Consumo neto y crédito disponible</p></div></div><div class="card-body"><div class="split-bars" id="zoneCards"></div></div></div>
+        </div>
+        <div class="card table-card"><div class="card-head"><div><h3>Últimos movimientos</h3><p>Operaciones confirmadas más recientes</p></div><button class="btn" onclick="showPage('movements')">Ver todos →</button></div><div class="table-wrap"><table><thead><tr><th>Fecha</th><th>Movimiento</th><th>Zona</th><th>Línea</th><th>Referencia</th><th class="right">Monto</th></tr></thead><tbody id="recentTable"></tbody></table></div></div>
+        <p class="footer-note">Nota: los límites iniciales de Banorte y Cetelem se distribuyen 50/50 entre Norte y Sur como supuesto de demostración. Confirma la distribución operativa en Configuración. Esta versión guarda información localmente en este navegador; no es una base de datos multiusuario.</p>
+      </section>
+      <section id="page-units" class="page hidden">
+        <div class="page-head"><div><h2>Unidades y facturas</h2><p>Registra vehículos facturados y la línea a la que se carga cada unidad.</p></div><div class="actions"><button class="btn" onclick="exportCSV('units')">⇩ Exportar CSV</button><button class="btn primary" onclick="openUnitForm()">＋ Nueva unidad</button></div></div>
+        <div class="card table-card"><div class="card-head"><div><h3>Registro de unidades</h3><p>Consulta y filtra las unidades registradas.</p></div><div class="filters"><input id="unitSearch" placeholder="Buscar serie, modelo o factura…" oninput="renderUnits()"><select id="unitZoneFilter" onchange="renderUnits()"><option value="">Todas las zonas</option><option>Norte</option><option>Sur</option></select><select id="unitLineFilter" onchange="renderUnits()"><option value="">Todas las líneas</option><option value="CASH">Cash</option><option value="CHINO">Crédito Chino</option><option value="BANORTE">Plan Piso Banorte</option><option value="CETELEM">Plan Piso Cetelem</option></select></div></div><div class="table-wrap"><table><thead><tr><th>Fecha factura</th><th>Zona</th><th>Unidad / modelo</th><th>Serie / VIN</th><th>Factura</th><th>Línea</th><th class="right">Costo</th><th>Estado</th><th>Acción</th></tr></thead><tbody id="unitsTable"></tbody></table></div></div>
+      </section>
+      <section id="page-payments" class="page hidden">
+        <div class="page-head"><div><h2>Registro de pagos</h2><p>Los pagos confirmados incrementan la disponibilidad de la línea y zona elegidas.</p></div><button class="btn" onclick="exportCSV('payments')">⇩ Exportar CSV</button></div>
+        <div class="grid dashboard-grid">
+          <div class="card form-card"><h3>Registrar un pago</h3><p>Captura los datos del abono recibido o aplicado.</p><form id="paymentForm"><div class="form-grid">
+            <div class="field"><label for="payDate">Fecha del pago *</label><input id="payDate" type="date" required></div>
+            <div class="field"><label for="payZone">Zona *</label><select id="payZone" required><option value="Norte">Zona Norte</option><option value="Sur">Zona Sur</option></select></div>
+            <div class="field"><label for="payLine">Línea de crédito *</label><select id="payLine" required><option value="CHINO">Crédito Chino</option><option value="BANORTE">Plan Piso Banorte</option><option value="CETELEM">Plan Piso Cetelem</option></select></div>
+            <div class="field"><label for="payAmount">Monto (MXN) *</label><input id="payAmount" type="number" min=".01" step=".01" placeholder="0.00" required></div>
+            <div class="field full"><label for="payRef">Referencia bancaria / folio *</label><input id="payRef" required placeholder="Ej. SPEI-12345"></div>
+            <div class="field full"><label for="payNotes">Observaciones</label><textarea id="payNotes" rows="2" placeholder="Notas opcionales"></textarea></div>
+          </div><div class="notice blue" style="margin-top:16px">En este prototipo, al guardar el pago se considera confirmado. En producción, se recomienda separar captura y autorización de Finanzas.</div><div class="form-actions"><button class="btn primary" type="submit">Guardar pago confirmado</button></div></form></div>
+          <div class="card"><div class="card-head"><div><h3>Disponibilidad por zona</h3><p>Saldos actuales estimados</p></div></div><div class="card-body" id="paymentBalances"></div></div>
+        </div>
+        <div class="card table-card" style="margin-top:18px"><div class="card-head"><div><h3>Historial de pagos</h3><p>Pagos registrados en el sistema</p></div></div><div class="table-wrap"><table><thead><tr><th>Fecha</th><th>Zona</th><th>Línea</th><th>Referencia</th><th class="right">Monto</th><th>Estado</th></tr></thead><tbody id="paymentsTable"></tbody></table></div></div>
+      </section>
+      <section id="page-movements" class="page hidden">
+        <div class="page-head"><div><h2>Movimientos de crédito</h2><p>Libro histórico de cargos, abonos y reversos confirmados.</p></div><button class="btn" onclick="exportCSV('movements')">⇩ Exportar CSV</button></div>
+        <div class="card table-card"><div class="card-head"><div><h3>Libro de movimientos</h3><p>La información se genera al confirmar unidades y pagos.</p></div><div class="filters"><select id="movZoneFilter" onchange="renderMovements()"><option value="">Todas las zonas</option><option>Norte</option><option>Sur</option></select><select id="movLineFilter" onchange="renderMovements()"><option value="">Todas las líneas</option><option value="CHINO">Crédito Chino</option><option value="BANORTE">Plan Piso Banorte</option><option value="CETELEM">Plan Piso Cetelem</option></select></div></div><div class="table-wrap"><table><thead><tr><th>Fecha</th><th>ID</th><th>Tipo</th><th>Zona</th><th>Línea</th><th>Referencia</th><th class="right">Monto</th><th>Estado</th></tr></thead><tbody id="movementsTable"></tbody></table></div></div>
+      </section>
+      <section id="page-settings" class="page hidden">
+        <div class="page-head"><div><h2>Configuración de crédito</h2><p>Define límites globales y asignación por zona. Los cambios ajustan los saldos calculados.</p></div><div class="actions"><button class="btn danger" onclick="resetDemo()">Restablecer datos de demostración</button></div></div>
+        <div class="notice" style="margin-bottom:18px">Confirma los límites autorizados antes de usar el sistema con información real. Los límites por zona no deben sumar más que el límite global de cada financiera. Los movimientos históricos no se borran al editar los límites.</div>
+        <div class="grid settings-grid" id="settingsCards"></div>
+        <div class="card form-card" style="margin-top:18px"><h3>Reglas de operación</h3><p>Orden sugerido de uso de crédito y criterios de validación.</p><div class="form-grid">
+          <div class="field"><label>Prioridad 1</label><input value="Crédito Chino" disabled></div><div class="field"><label>Prioridad 2</label><input value="Plan Piso Banorte" disabled></div><div class="field"><label>Prioridad 3</label><input value="Plan Piso Cetelem" disabled></div><div class="field"><label>Umbral de alerta</label><input value="20% de disponibilidad" disabled></div>
+        </div><p class="footer-note">La prioridad se muestra como recomendación. La línea final se selecciona de acuerdo con elegibilidad y disponibilidad. Este prototipo no implementa usuarios autenticados ni autorización real.</p></div>
+        <div class="card form-card" style="margin-top:18px"><h3>Respaldo de datos</h3><p>Descarga o restaura la información de este navegador.</p><div class="actions"><button class="btn primary" onclick="backupJSON()">Descargar respaldo JSON</button><label class="btn" for="restoreFile">Restaurar respaldo JSON</label><input id="restoreFile" type="file" accept=".json,application/json" class="hidden" onchange="restoreJSON(event)"></div></div>
+      </section>
+    </div>
+  </main>
+</div>
+<div id="modalRoot"></div><div id="toastRoot"></div>
+<script>
+const KEY='grumar_credit_control_v1';
+const LINE_INFO={
+ CHINO:{label:'Crédito Chino',limit:54000000,priority:1,color:'blue'},
+ BANORTE:{label:'Plan Piso Banorte',limit:60000000,priority:2,color:'orange'},
+ CETELEM:{label:'Plan Piso Cetelem',limit:60000000,priority:3,color:'green'}
+};
+const money=n=>new Intl.NumberFormat('es-MX',{style:'currency',currency:'MXN',maximumFractionDigits:0}).format(Number(n)||0);
+const dateToday=()=>new Date().toISOString().slice(0,10);
+const id=prefix=>prefix+'-'+Date.now().toString(36).toUpperCase()+'-'+Math.random().toString(36).slice(2,6).toUpperCase();
+const escapeHTML=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+function freshState(){return {version:1,limits:{Norte:{CHINO:27000000,BANORTE:30000000,CETELEM:30000000},Sur:{CHINO:27000000,BANORTE:30000000,CETELEM:30000000}},units:[],payments:[],movements:[]};}
+let state=loadState();
+function loadState(){try{const raw=localStorage.getItem(KEY);if(raw){const parsed=JSON.parse(raw);if(parsed&&parsed.limits&&parsed.units&&parsed.payments&&parsed.movements)return parsed;}}catch(e){}return freshState();}
+function saveState(){localStorage.setItem(KEY,JSON.stringify(state));const el=document.getElementById('lastSaved');if(el)el.textContent='Guardado local · '+new Date().toLocaleTimeString('es-MX',{hour:'2-digit',minute:'2-digit'});}
+function lineLabel(line){return line==='CASH'?'Cash':(LINE_INFO[line]?.label||line||'—');}
+function netUsed(zone,line){return state.movements.filter(m=>m.zone===zone&&m.line===line&&m.status==='CONFIRMADO').reduce((sum,m)=>sum+(m.effect||0),0);}
+function available(zone,line){return Number(state.limits[zone]?.[line]||0)-netUsed(zone,line);}
+function totalLimit(){return Object.values(LINE_INFO).reduce((s,l)=>s+l.limit,0);}
+function allLimit(){return ['Norte','Sur'].reduce((s,z)=>s+Object.values(state.limits[z]).reduce((a,b)=>a+Number(b||0),0),0);}
+function totalUsed(){return ['Norte','Sur'].reduce((s,z)=>s+Object.keys(LINE_INFO).reduce((a,l)=>a+netUsed(z,l),0),0);}
+function totalAvailable(){return ['Norte','Sur'].reduce((s,z)=>s+Object.keys(LINE_INFO).reduce((a,l)=>a+available(z,l),0),0);}
+function addMovement({zone,line,type,amount,ref,unitId='',paymentId='',notes=''}){const effect=type==='CARGO'||type==='AJUSTE_CARGO'?Number(amount):type==='ABONO'||type==='AJUSTE_ABONO'?-Number(amount):Number(amount);state.movements.unshift({movementId:id('MOV'),date:new Date().toISOString(),zone,line,type,amount:Number(amount),effect,ref,unitId,paymentId,notes,status:'CONFIRMADO'});}
+function toast(msg){const root=document.getElementById('toastRoot');root.innerHTML='<div class="toast">'+escapeHTML(msg)+'</div>';setTimeout(()=>root.innerHTML='',3300);}
+function showPage(page){document.querySelectorAll('.page').forEach(p=>p.classList.add('hidden'));document.getElementById('page-'+page).classList.remove('hidden');document.querySelectorAll('#nav button').forEach(b=>b.classList.toggle('active',b.dataset.page===page));const titles={dashboard:'Dashboard ejecutivo',units:'Unidades y facturas',payments:'Registro de pagos',movements:'Movimientos de crédito',settings:'Configuración'};document.getElementById('topTitle').textContent=titles[page];renderAll();window.scrollTo({top:0,behavior:'smooth'});}
+document.querySelectorAll('#nav button').forEach(b=>b.addEventListener('click',()=>showPage(b.dataset.page)));
+function tableEmpty(cols,msg){return `<tr><td colspan="${cols}" class="empty">${msg}</td></tr>`;}
+function renderDashboard(){
+ document.getElementById('kpiLimit').textContent=money(allLimit());
+ document.getElementById('kpiUsed').textContent=money(totalUsed());
+ document.getElementById('kpiAvailable').textContent=money(totalAvailable());
+ const financed=state.units.filter(u=>u.status==='CONFIRMADA'&&u.paymentType==='CREDITO').length;
+ const cash=state.units.filter(u=>u.status==='CONFIRMADA'&&u.paymentType==='CASH').length;
+ document.getElementById('kpiUnits').textContent=financed.toLocaleString('es-MX');
+ document.getElementById('kpiCash').textContent=cash+' unidades de contado';
+ document.getElementById('kpiUsedFoot').textContent=(allLimit()?Math.round(totalUsed()/allLimit()*100):0)+'% de utilización neta';
+ document.getElementById('kpiAvailableFoot').textContent=(allLimit()?Math.round(totalAvailable()/allLimit()*100):0)+'% de disponibilidad';
+ const bars=Object.keys(LINE_INFO).map(line=>{
+  const limit=['Norte','Sur'].reduce((s,z)=>s+Number(state.limits[z][line]||0),0);
+  const avail=['Norte','Sur'].reduce((s,z)=>s+available(z,line),0);
+  const used=limit-avail, pct=limit?Math.max(0,Math.min(100,used/limit*100)):0;
+  return `<div class="line-row"><div class="line-meta"><strong>${LINE_INFO[line].label}</strong><span>${money(avail)} disponibles / ${money(limit)}</span></div><div class="bar ${LINE_INFO[line].color}"><span style="width:${pct}%"></span></div><div class="line-meta" style="margin-top:6px;margin-bottom:0"><span>Utilizado: ${money(used)}</span><span>${Math.round(pct)}% utilizado</span></div></div>`;
+ }).join('');
+ document.getElementById('lineBars').innerHTML=bars;
+ document.getElementById('zoneCards').innerHTML=['Norte','Sur'].map(zone=>{
+  const lim=Object.keys(LINE_INFO).reduce((s,l)=>s+Number(state.limits[zone][l]||0),0);
+  const used=Object.keys(LINE_INFO).reduce((s,l)=>s+netUsed(zone,l),0);
+  return `<div class="zone-item"><div class="zone-title">${zone==='Norte'?'Zona Norte':'Zona Sur'} <small>${Math.round(lim?used/lim*100:0)}% utilizado</small></div><div class="zone-mini">${Object.keys(LINE_INFO).map(line=>`<div class="mini"><label>${LINE_INFO[line].label.replace('Plan Piso ','')}</label><strong>${money(available(zone,line))}</strong></div>`).join('')}</div></div>`;
+ }).join('');
+ const recent=state.movements.slice(0,6);
+ document.getElementById('recentTable').innerHTML=recent.length?recent.map(m=>`<tr><td>${new Date(m.date).toLocaleDateString('es-MX')}</td><td><span class="pill">${escapeHTML(m.type.replace('_',' '))}</span></td><td>${escapeHTML(m.zone)}</td><td>${escapeHTML(lineLabel(m.line))}</td><td>${escapeHTML(m.ref||'—')}</td><td class="right ${m.effect<0?'positive':'negative'}">${m.effect<0?'+':'−'}${money(Math.abs(m.effect))}</td></tr>`).join(''):tableEmpty(6,'Aún no hay movimientos registrados.');
+}
+function renderUnits(){
+ const search=(document.getElementById('unitSearch')?.value||'').toLowerCase(),zone=document.getElementById('unitZoneFilter')?.value||'',line=document.getElementById('unitLineFilter')?.value||'';
+ const rows=state.units.filter(u=>(!search||[u.model,u.vin,u.invoice].some(x=>(x||'').toLowerCase().includes(search)))&&(!zone||u.zone===zone)&&(!line||u.line===line));
+ document.getElementById('unitsTable').innerHTML=rows.length?rows.map(u=>`<tr><td>${escapeHTML(u.date)}</td><td>${escapeHTML(u.zone)}</td><td><strong>${escapeHTML(u.model)}</strong></td><td>${escapeHTML(u.vin)}</td><td>${escapeHTML(u.invoice||'—')}</td><td><span class="pill ${u.line==='CASH'?'cash':''}">${escapeHTML(lineLabel(u.line))}</span></td><td class="right">${money(u.cost)}</td><td><span class="pill ${u.status==='CANCELADA'?'cancel':''}">${escapeHTML(u.status)}</span></td><td>${u.status==='CONFIRMADA'?`<button class="btn danger" onclick="cancelUnit('${u.unitId}')">Cancelar</button>`:'—'}</td></tr>`).join(''):tableEmpty(9,'No se encontraron unidades.');
+}
+function renderPayments(){
+ const rows=state.payments;
+ document.getElementById('paymentsTable').innerHTML=rows.length?rows.map(p=>`<tr><td>${escapeHTML(p.date)}</td><td>${escapeHTML(p.zone)}</td><td>${escapeHTML(lineLabel(p.line))}</td><td>${escapeHTML(p.ref)}</td><td class="right positive">+${money(p.amount)}</td><td><span class="pill">${escapeHTML(p.status)}</span></td></tr>`).join(''):tableEmpty(6,'Aún no hay pagos registrados.');
+ document.getElementById('paymentBalances').innerHTML=['Norte','Sur'].map(z=>`<div class="line-row"><div class="line-meta"><strong>Zona ${z}</strong><span>Disponible total ${money(Object.keys(LINE_INFO).reduce((s,l)=>s+available(z,l),0))}</span></div>${Object.keys(LINE_INFO).map(l=>`<div class="line-meta"><span>${LINE_INFO[l].label}</span><strong>${money(available(z,l))}</strong></div>`).join('')}</div>`).join('');
+}
+function renderMovements(){
+ const z=document.getElementById('movZoneFilter')?.value||'',l=document.getElementById('movLineFilter')?.value||'';
+ const rows=state.movements.filter(m=>(!z||m.zone===z)&&(!l||m.line===l));
+ document.getElementById('movementsTable').innerHTML=rows.length?rows.map(m=>`<tr><td>${new Date(m.date).toLocaleString('es-MX')}</td><td>${escapeHTML(m.movementId)}</td><td><span class="pill">${escapeHTML(m.type)}</span></td><td>${escapeHTML(m.zone)}</td><td>${escapeHTML(lineLabel(m.line))}</td><td>${escapeHTML(m.ref||'—')}</td><td class="right ${m.effect<0?'positive':'negative'}">${m.effect<0?'+':'−'}${money(Math.abs(m.effect))}</td><td><span class="pill">${escapeHTML(m.status)}</span></td></tr>`).join(''):tableEmpty(8,'No hay movimientos que coincidan con los filtros.');
+}
+function renderSettings(){
+ document.getElementById('settingsCards').innerHTML=Object.keys(LINE_INFO).map(line=>`<div class="card limit-card"><h4>${LINE_INFO[line].label}</h4><div class="field"><label>Límite global (MXN)</label><input type="number" min="0" id="global-${line}" value="${LINE_INFO[line].limit}" disabled><span class="small">El límite global base está definido por la financiera.</span></div>${['Norte','Sur'].map(z=>`<div class="field"><label>${z} · límite asignado (MXN)</label><input type="number" min="0" step=".01" id="limit-${z}-${line}" value="${Number(state.limits[z][line]||0)}"></div>`).join('')}<button class="btn primary" onclick="saveLimit('${line}')">Guardar límites de esta línea</button></div>`).join('');
+}
+function renderAll(){renderDashboard();renderUnits();renderPayments();renderMovements();renderSettings();}
+function openUnitForm(){
+ const root=document.getElementById('modalRoot');
+ root.innerHTML=`<div class="modal-backdrop" onclick="if(event.target===this)closeModal()"><div class="modal"><div class="modal-head"><h3>Registrar unidad facturada</h3><button class="xbtn" onclick="closeModal()">×</button></div><div class="modal-body"><form id="unitForm"><div class="form-grid">
+ <div class="field"><label>Fecha de factura *</label><input id="unitDate" type="date" value="${dateToday()}" required></div>
+ <div class="field"><label>Zona *</label><select id="unitZone" required><option>Norte</option><option>Sur</option></select></div>
+ <div class="field"><label>Unidad / modelo *</label><select id="unitModel" required>
+ <option>Dashing</option>
+ <option>T1</option>
+ <option>T1 i-DM</option>
+ <option>T2</option>
+ <option>T2 i-DM</option>
+ <option>T2 i-DM XWD</option>
+ <option>G700</option>
+ <option>F700</option>
+ <option>S06 i-DM</option>
+ <option>S07</option>
+ <option>S08 i-DM</option>
+ <option>S09</option>
+ </select></div>
+ <div class="field"><label>Serie / VIN *</label><input id="unitVin" maxlength="60" placeholder="Número de serie único" required></div>
+ <div class="field"><label>Costo a cargar (MXN) *</label><input id="unitCost" type="number" min=".01" step=".01" placeholder="0.00" required></div>
+ <div class="field"><label>Folio de factura</label><input id="unitInvoice" placeholder="Número de factura"></div>
+ <div class="field"><label>Forma de pago *</label><select id="unitPaymentType" onchange="toggleUnitLine()" required><option value="CREDITO">Crédito</option><option value="CASH">Cash / contado</option></select></div>
+ <div class="field" id="lineField"><label>Línea de crédito *</label><select id="unitLine"><option value="CHINO">1 · Crédito Chino</option><option value="BANORTE">2 · Plan Piso Banorte</option><option value="CETELEM">3 · Plan Piso Cetelem</option></select></div>
+ <div class="field full"><div id="lineSuggestion" class="notice blue">Prioridad sugerida: Crédito Chino. Se verificará la disponibilidad al guardar.</div></div>
+ </div><div class="form-actions"><button class="btn" type="button" onclick="closeModal()">Cancelar</button><button class="btn primary" type="submit">Guardar unidad</button></div></form></div></div></div>`;
+ document.getElementById('unitForm').addEventListener('submit',submitUnit);
+ document.getElementById('unitZone').addEventListener('change',updateSuggestion);
+ document.getElementById('unitLine').addEventListener('change',updateSuggestion);
+ document.getElementById('unitCost').addEventListener('input',updateSuggestion);
+ document.getElementById('unitPaymentType').addEventListener('change',toggleUnitLine);
+}
+function closeModal(){document.getElementById('modalRoot').innerHTML='';}
+function toggleUnitLine(){const cash=document.getElementById('unitPaymentType').value==='CASH';document.getElementById('lineField').classList.toggle('hidden',cash);document.getElementById('unitLine').required=!cash;document.getElementById('lineSuggestion').classList.toggle('hidden',cash);}
+function updateSuggestion(){
+ const z=document.getElementById('unitZone').value,line=document.getElementById('unitLine').value,cost=Number(document.getElementById('unitCost').value||0);
+ const order=Object.keys(LINE_INFO).sort((a,b)=>LINE_INFO[a].priority-LINE_INFO[b].priority);
+ const first=order.find(l=>available(z,l)>=cost);
+ const el=document.getElementById('lineSuggestion');
+ if(!first){el.textContent='No hay una línea prioritaria con disponibilidad suficiente para este monto.';return;}
+ el.textContent=`Prioridad sugerida: ${LINE_INFO[first].label} · Disponible en ${z}: ${money(available(z,first))}. Línea seleccionada: ${LINE_INFO[line].label}.`;
+}
+function submitUnit(e){
+ e.preventDefault();
+ const date=document.getElementById('unitDate').value,zone=document.getElementById('unitZone').value,model=document.getElementById('unitModel').value.trim(),vin=document.getElementById('unitVin').value.trim(),cost=Number(document.getElementById('unitCost').value),invoice=document.getElementById('unitInvoice').value.trim(),paymentType=document.getElementById('unitPaymentType').value,line=paymentType==='CASH'?'CASH':document.getElementById('unitLine').value;
+ if(state.units.some(u=>u.vin.toLowerCase()===vin.toLowerCase()&&u.status!=='CANCELADA')){toast('Ya existe una unidad activa con esa serie/VIN.');return;}
+ if(!date||!model||!vin||!(cost>0)){toast('Verifica los campos obligatorios.');return;}
+ if(paymentType==='CREDITO'&&available(zone,line)<cost){toast(`Crédito insuficiente. Disponible en ${zone}: ${money(available(zone,line))}`);return;}
+ const unit={unitId:id('UNI'),date,zone,model,vin,cost,invoice,paymentType,line,status:'CONFIRMADA',createdAt:new Date().toISOString()};
+ state.units.unshift(unit);
+ if(paymentType==='CREDITO')addMovement({zone,line,type:'CARGO',amount:cost,ref:invoice||vin,unitId:unit.unitId,notes:'Cargo por unidad facturada'});
+ saveState();closeModal();renderAll();toast('Unidad registrada correctamente.');
+}
+function cancelUnit(unitId){
+ const u=state.units.find(x=>x.unitId===unitId);if(!u||u.status!=='CONFIRMADA')return;
+ if(!confirm(`¿Cancelar la unidad ${u.vin}? Se registrará un reverso de crédito si corresponde.`))return;
+ u.status='CANCELADA';
+ if(u.paymentType==='CREDITO')addMovement({zone:u.zone,line:u.line,type:'REVERSO',amount:u.cost,ref:u.invoice||u.vin,unitId:u.unitId,notes:'Reverso por cancelación de unidad'});
+ saveState();renderAll();toast('Unidad cancelada y movimiento compensatorio registrado.');
+}
+document.getElementById('paymentForm').addEventListener('submit',e=>{
+ e.preventDefault();const date=document.getElementById('payDate').value,zone=document.getElementById('payZone').value,line=document.getElementById('payLine').value,amount=Number(document.getElementById('payAmount').value),ref=document.getElementById('payRef').value.trim(),notes=document.getElementById('payNotes').value.trim();
+ if(!(amount>0)||!date||!ref){toast('Completa los campos obligatorios.');return;}
+ if(state.payments.some(p=>p.ref.toLowerCase()===ref.toLowerCase()&&p.line===line&&p.zone===zone&&p.status==='CONFIRMADO')){toast('Ya existe un pago confirmado con esa referencia, línea y zona.');return;}
+ const p={paymentId:id('PAG'),date,zone,line,amount,ref,notes,status:'CONFIRMADO',createdAt:new Date().toISOString()};state.payments.unshift(p);
+ addMovement({zone,line,type:'ABONO',amount,ref,paymentId:p.paymentId,notes:notes||'Pago confirmado'});saveState();e.target.reset();document.getElementById('payDate').value=dateToday();renderAll();toast('Pago registrado; disponibilidad actualizada.');
+});
+function saveLimit(line){
+ const n=Number(document.getElementById(`limit-Norte-${line}`).value),s=Number(document.getElementById(`limit-Sur-${line}`).value),global=LINE_INFO[line].limit;
+ if(n<0||s<0||!Number.isFinite(n)||!Number.isFinite(s)){toast('Los límites deben ser números válidos no negativos.');return;}
+ if(Math.abs(n+s-global)>.01){toast(`La suma de Norte y Sur debe ser igual al límite global de ${money(global)}.`);return;}
+ state.limits.Norte[line]=n;state.limits.Sur[line]=s;saveState();renderAll();toast('Límites actualizados correctamente.');
+}
+function exportCSV(type){
+ let rows=[],filename=type+'.csv';
+ if(type==='units'){rows=[['ID','Fecha','Zona','Modelo','Serie/VIN','Costo','Factura','Forma de pago','Línea','Estado'],...state.units.map(u=>[u.unitId,u.date,u.zone,u.model,u.vin,u.cost,u.invoice,u.paymentType,lineLabel(u.line),u.status])];}
+ else if(type==='payments'){rows=[['ID','Fecha','Zona','Línea','Monto','Referencia','Estado'],...state.payments.map(p=>[p.paymentId,p.date,p.zone,lineLabel(p.line),p.amount,p.ref,p.status])];}
+ else {rows=[['ID movimiento','Fecha','Tipo','Zona','Línea','Monto','Efecto neto','Referencia','Estado'],...state.movements.map(m=>[m.movementId,m.date,m.type,m.zone,lineLabel(m.line),m.amount,m.effect,m.ref,m.status])];}
+ const csv='\uFEFF'+rows.map(r=>r.map(v=>'"'+String(v??'').replace(/"/g,'""')+'"').join(',')).join('\r\n');
+ const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([csv],{type:'text/csv;charset=utf-8;'}));a.download=filename;a.click();URL.revokeObjectURL(a.href);
+}
+function backupJSON(){const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([JSON.stringify(state,null,2)],{type:'application/json'}));a.download='grumar-respaldo-'+dateToday()+'.json';a.click();URL.revokeObjectURL(a.href);}
+function restoreJSON(e){const file=e.target.files[0];if(!file)return;const reader=new FileReader();reader.onload=()=>{try{const d=JSON.parse(reader.result);if(!d.limits||!d.units||!d.payments||!d.movements)throw new Error('Formato no válido');if(!confirm('Esto reemplazará los datos guardados en este navegador. ¿Continuar?'))return;state=d;saveState();renderAll();toast('Respaldo restaurado.');}catch(err){toast('No se pudo restaurar: archivo inválido.');}e.target.value='';};reader.readAsText(file);}
+function resetDemo(){if(!confirm('¿Borrar todas las unidades, pagos y movimientos locales y volver a los límites iniciales? Descarga un respaldo primero si necesitas conservarlos.'))return;state=freshState();saveState();renderAll();toast('Datos de demostración restablecidos.');}
+document.getElementById('payDate').value=dateToday();
+renderAll();
+</script>
+</body>
+</html>
